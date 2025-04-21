@@ -4,9 +4,9 @@ console.log("wylosowana liczba to: " + randomNumber);
 if (randomNumber == "1") {
   computerMove = "kamień";
 } else if (randomNumber == "2") {
-  playerMove = "papier";
+  computerMove = "papier";
 } else if (randomNumber == "3") {
-  playerMove2 = "nożyce";
+  computerMove = "nożyce";
 } else {
   computerMove = "nieznany ruch";
 }
