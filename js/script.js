@@ -1,27 +1,40 @@
-var computerMove, playerMove, playerMove2, randomNumber;
+var argComputerMove,
+  argMoveId,
+  argPlayerMove,
+  computerMove,
+  playerInput,
+  playerMove,
+  randomNumber;
+
+/**
+ * Describe this function...
+ */
+function displayResult(argPlayerMove, argComputerMove) {
+  console.log(
+    "wywołano funkcję displayResults z argumentami: " +
+      argPlayerMove +
+      ", " +
+      argComputerMove
+  );
+  if (argPlayerMove == "papier" && argComputerMove == "kamień") {
+    printMessage("Wygrywasz!");
+  } else if (argPlayerMove == "kamień" && argComputerMove == "nożyce") {
+    printMessage("Wygrywasz!");
+  } else if (argPlayerMove == "nożyce" && argComputerMove == "papier") {
+    printMessage("Wygrywasz!");
+  } else if (argPlayerMove == argComputerMove) {
+    printMessage("Remis!");
+  } else {
+    printMessage("Przegrywasz :(");
+  }
+  printMessage("Zagrałem " + argComputerMove + ", a Ty " + argPlayerMove);
+}
+playerInput = prompt("Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.");
+console.log("wybór ruchu gracza to: " + playerInput);
+playerMove = 0;
+console.log("ruch gracza to: " + playerMove);
 randomNumber = Math.floor(Math.random() * 3 + 1);
 console.log("wylosowana liczba to: " + randomNumber);
-if (randomNumber == "1") {
-  computerMove = "kamień";
-} else if (randomNumber == "2") {
-  computerMove = "papier";
-} else if (randomNumber == "3") {
-  computerMove = "nożyce";
-} else {
-  computerMove = "nieznany ruch";
-}
-printMessage("Mój ruch: " + computerMove);
-
-var playerInput, playerMove;
-playerInput = prompt("Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.");
-console.log("Wpisana odpowiedź to: " + playerInput);
-if (playerInput == "1") {
-  playerMove = "kamień";
-} else if (playerInput == "2") {
-  playerInput = "papier";
-} else if (playerInput == "3") {
-  playerInput = "nożyce";
-} else {
-  playerInput = "nieznany ruch";
-}
-printMessage("Twój ruch: " + playerInput);
+computerMove = 0;
+console.log("ruch komputera to: " + computerMove);
+displayResult(playerMove, computerMove);
