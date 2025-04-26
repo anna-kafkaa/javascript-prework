@@ -83,12 +83,3 @@ function displayResult(argPlayerMove, argComputerMove) {
     "result"
   ).innerText = `${playerWins} - ${computerWins}`;
 }
-
-// --- Wiadomości ---
-function printMessage(msg) {
-  document.getElementById("messages").innerHTML += msg + "<br>";
-}
-
-function clearMessages() {
-  document.getElementById("messages").innerHTML = "";
-}
